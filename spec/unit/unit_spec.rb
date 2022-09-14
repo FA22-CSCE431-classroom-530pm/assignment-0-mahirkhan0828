@@ -3,7 +3,7 @@ require 'rails_helper'
 
 RSpec.describe Book, type: :model do
   subject do
-    described_class.new(title: 'harry potter')
+    described_class.new(title: 'Harry Potter', author: "J.K. Rowling", price: "10", published_date: "2019-08-28")
   end
 
   it 'is valid with valid attributes' do
@@ -12,15 +12,16 @@ RSpec.describe Book, type: :model do
 
   it 'is not valid without a name' do
     subject.title = nil
+    subject.author = nil
+    subject.price = nil
+    subject.published_date = nil
     expect(subject).not_to be_valid
   end
 end
-
-# Unit test for author
 
 RSpec.describe Book, type: :model do
   subject do
-    described_class.new(author: 'J.K. Rowling')
+    described_class.new(title: 'Harry Potter', author: "J.K. Rowling", price: "10", published_date: "2019-08-28")
   end
 
   it 'is valid with valid attributes' do
@@ -29,14 +30,16 @@ RSpec.describe Book, type: :model do
 
   it 'is not valid without a name' do
     subject.title = nil
+    subject.author = nil
+    subject.price = nil
+    subject.published_date = nil
     expect(subject).not_to be_valid
   end
 end
 
-# Unit test for price
 RSpec.describe Book, type: :model do
   subject do
-    described_class.new(price: 10)
+    described_class.new(title: 'Harry Potter', author: "J.K. Rowling", price: "10", published_date: "2019-08-28")
   end
 
   it 'is valid with valid attributes' do
@@ -45,14 +48,16 @@ RSpec.describe Book, type: :model do
 
   it 'is not valid without a name' do
     subject.title = nil
+    subject.author = nil
+    subject.price = nil
+    subject.published_date = nil
     expect(subject).not_to be_valid
   end
 end
 
-# Unit test for published date
 RSpec.describe Book, type: :model do
   subject do
-    described_class.new(publishedDate: "Sat, 10 Nov 2007")
+    described_class.new(title: 'Harry Potter', author: "J.K. Rowling", price: "10", published_date: "2019-08-28")
   end
 
   it 'is valid with valid attributes' do
@@ -61,6 +66,10 @@ RSpec.describe Book, type: :model do
 
   it 'is not valid without a name' do
     subject.title = nil
+    subject.author = nil
+    subject.price = nil
+    subject.published_date = nil
     expect(subject).not_to be_valid
   end
 end
+
